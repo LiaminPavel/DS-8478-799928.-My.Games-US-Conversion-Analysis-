@@ -1,6 +1,23 @@
+# Data files — never commit
 *.parquet
-data/raw/
-.env
+*.csv
+*.json
+*.xlsx
+*.xls
+data/
+
+# Charts output — not needed in git
+charts/
+
+# Python
 __pycache__/
-.ipynb_checkpoints/
 *.pyc
+*.pyo
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# System
+.DS_Store
+*.log
