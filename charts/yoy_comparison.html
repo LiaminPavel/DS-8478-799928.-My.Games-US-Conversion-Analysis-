@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'>
+<style>
+  body { background:#f8fafc; margin:0; padding:20px; font-family:'Roboto', sans-serif; color:#0f172a; }
+  .chart-wrap { background:#ffffff; border:1px solid #dbe7ee; border-radius:14px; padding:18px 20px 16px; }
+  .title { font-size:20px; font-weight:700; margin-bottom:6px; }
+  .subtitle { font-size:12px; color:#64748b; margin-bottom:14px; }
+  .kpi-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin-bottom:14px; }
+  .kpi-card { border:1px solid #d7ece9; border-radius:12px; padding:10px 12px; background:#f0fdfa; }
+  .kpi-label { font-size:11px; color:#0f766e; text-transform:uppercase; letter-spacing:0.03em; }
+  .kpi-value { font-size:22px; font-weight:700; color:#115e59; margin-top:2px; }
+  .legend { display:flex; gap:14px; margin:6px 0 12px; }
+  .legend-item { font-size:12px; color:#334155; display:flex; align-items:center; gap:6px; }
+  .sw { width:14px; height:14px; border-radius:5px; display:inline-block; }
+  .metric-label { font-size:12px; fill:#334155; font-weight:500; }
+  .val-label { font-size:11px; fill:#0f172a; font-weight:500; }
+  .grid-line { stroke:#edf3f7; stroke-width:1; }
+  .tick-line { stroke:#f1f5f9; stroke-width:1; }
+  .tick-label { font-size:10px; fill:#94a3b8; }
+</style>
+</head>
+<body>
+
+<div style="border-radius:12px; padding:24px 32px;
+            box-shadow:0 4px 20px rgba(0,0,0,0.08); border:1px solid #e2e8f0;">
+
+<div class='chart-wrap'>
+  <div class='title'>YoY Comparison: CR_OPEN_INTERACT, CR_OPEN_CREATE, CR_CREATE_DONE, CR_OPEN_DONE</div>
+  <div class='subtitle'>Calendar-year comparison regardless of month coverage</div>
+  <div class='kpi-row'><div class='kpi-card'><div class='kpi-label'>Open (2025)</div><div class='kpi-value'>100,262</div></div><div class='kpi-card'><div class='kpi-label'>Open (2026)</div><div class='kpi-value'>373,731</div></div></div>
+  <div class='legend'><div class='legend-item'><span class='sw' style='background:#0f766e;'></span>2025</div><div class='legend-item'><span class='sw' style='background:#14b8a6;'></span>2026</div></div>
+  <svg width='1120' height='358' role='img' aria-label='YoY comparison chart'>
+    <line x1='230.00' y1='20' x2='230.00' y2='320' class='tick-line' /><text x='230.00' y='332' text-anchor='middle' class='tick-label'>0.0%</text><line x1='374.00' y1='20' x2='374.00' y2='320' class='tick-line' /><text x='374.00' y='332' text-anchor='middle' class='tick-label'>18.0%</text><line x1='518.00' y1='20' x2='518.00' y2='320' class='tick-line' /><text x='518.00' y='332' text-anchor='middle' class='tick-label'>35.9%</text><line x1='662.00' y1='20' x2='662.00' y2='320' class='tick-line' /><text x='662.00' y='332' text-anchor='middle' class='tick-label'>53.9%</text><line x1='806.00' y1='20' x2='806.00' y2='320' class='tick-line' /><text x='806.00' y='332' text-anchor='middle' class='tick-label'>71.9%</text><line x1='950.00' y1='20' x2='950.00' y2='320' class='tick-line' /><text x='950.00' y='332' text-anchor='middle' class='tick-label'>89.8%</text>
+    <text x='214' y='62' text-anchor='end' class='metric-label'>CR_OPEN_INTERACT</text><line x1='230' y1='78' x2='950' y2='78' class='grid-line' /><rect x='230' y='44' width='618.87' height='18' rx='8' ry='8' fill='#0f766e' /><text x='856.87' y='58' class='val-label'>77.22%</text><rect x='230' y='70' width='548.98' height='18' rx='8' ry='8' fill='#14b8a6' /><text x='786.98' y='84' class='val-label'>68.50%</text><text x='214' y='134' text-anchor='end' class='metric-label'>CR_OPEN_CREATE</text><line x1='230' y1='150' x2='950' y2='150' class='grid-line' /><rect x='230' y='116' width='515.41' height='18' rx='8' ry='8' fill='#0f766e' /><text x='753.41' y='130' class='val-label'>64.31%</text><rect x='230' y='142' width='474.64' height='18' rx='8' ry='8' fill='#14b8a6' /><text x='712.64' y='156' class='val-label'>59.22%</text><text x='214' y='206' text-anchor='end' class='metric-label'>CR_CREATE_DONE</text><line x1='230' y1='222' x2='950' y2='222' class='grid-line' /><rect x='230' y='188' width='702.86' height='18' rx='8' ry='8' fill='#0f766e' /><text x='940.86' y='202' class='val-label'>87.70%</text><rect x='230' y='214' width='720.00' height='18' rx='8' ry='8' fill='#14b8a6' /><text x='958.00' y='228' class='val-label'>89.84%</text><text x='214' y='278' text-anchor='end' class='metric-label'>CR_OPEN_DONE</text><line x1='230' y1='294' x2='950' y2='294' class='grid-line' /><rect x='230' y='260' width='452.01' height='18' rx='8' ry='8' fill='#0f766e' /><text x='690.01' y='274' class='val-label'>56.40%</text><rect x='230' y='286' width='426.41' height='18' rx='8' ry='8' fill='#14b8a6' /><text x='664.41' y='300' class='val-label'>53.21%</text>
+  </svg>
+</div>
+</div>
+</body>
+</html>
