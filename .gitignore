@@ -8,6 +8,7 @@ data/
 
 # Charts output — not needed in git
 charts/
+payment_flow_sankey_preview.html
 
 # Python
 __pycache__/
