@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+  body { background:#FFFFFF; margin:0; padding:20px; font-family:'Roboto', sans-serif; color:#011627; }
+  .chart-wrap { background:#FFFFFF; border:none; border-radius:14px; padding:6px 6px 12px; max-width: 760px; }
+  .title { font-size:36px; font-weight:700; margin-bottom:18px; font-family:'Open Sans', sans-serif; color:#011627; line-height:1.1; }
+  .subtitle { font-size:14px; color:#595959; margin-bottom:12px; font-family:'Open Sans', sans-serif; }
+  .kpi-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-bottom:14px; }
+  .kpi-card { border:2px solid #D3D3D3; border-radius:14px; background:#FFFFFF; overflow:hidden; }
+  .kpi-head { background:#B2F2FF; color:#011627; font-size:16px; font-weight:400; text-align:center; padding:6px 8px; font-family:'Open Sans', sans-serif; }
+  .kpi-value { font-size:48px; font-weight:400; color:#31CAE8; margin:8px 0 0; text-align:center; font-family:'Roboto', sans-serif; line-height:1; display:flex; justify-content:center; align-items:flex-start; }
+  .kpi-value-inline { display:inline-flex; align-items:flex-start; gap:4px; }
+  .kpi-value-num { font-size:inherit; font-weight:inherit; color:inherit; }
+  .kpi-diff { font-size:24px; line-height:1; vertical-align:super; position:relative; top:-0.2em; font-weight:400; margin-left:2px; font-family:'Roboto', sans-serif; }
+  .kpi-diff-pos { color:#2E7D32; }
+  .kpi-diff-neg { color:#C62828; }
+  .kpi-diff-neu { color:#757575; }
+  .kpi-note { font-size:14px; color:#595959; text-align:center; padding:6px 0 10px; font-family:'Roboto', sans-serif; }
+  .panel { background:#FFFFFF; border:2px solid #D0D7DA; border-radius:14px; padding:7px 7px 5px; }
+  .legend { display:flex; gap:22px; margin:0 0 10px; }
+  .legend-item { font-size:14px; color:#595959; display:flex; align-items:center; gap:8px; font-family:'Roboto', sans-serif; }
+  .sw { width:20px; height:10px; border-radius:5px; display:inline-block; }
+  .metric-label { font-size:16px; fill:#011627; font-weight:700; font-family:'Roboto', sans-serif; }
+  .year-label { font-size:12px; fill:#595959; font-weight:700; font-family:'Roboto', sans-serif; }
+  .val-label { font-size:12px; fill:#011627; font-weight:700; font-family:'Roboto', sans-serif; }
+  .grid-line { stroke:#C0C0C0; stroke-width:1; }
+  .tick-line { stroke:#E6E6E6; stroke-width:1; }
+  .tick-label { font-size:12px; fill:#595959; font-family:'Roboto', sans-serif; }
+  .yoy-pfw { max-width: 760px; margin: 0 auto; }
+  .yoy-save-bottom { display:flex; align-items:center; justify-content:flex-end; gap:10px; margin-top:12px; }
+  .yoy-save-btn { background:#31CAE8; color:#fff; border:none; border-radius:8px; padding:7px 12px; font-size:12px; font-weight:600; cursor:pointer; }
+  .yoy-save-status { font-size:11px; color:#595959; }
+</style>
+</head>
+<body>
+<div class='yoy-pfw'>
+
+<div style="border-radius:12px; padding:24px 32px;
+            box-shadow:0 4px 20px rgba(0,0,0,0.08); border:1px solid #e2e8f0;">
+
+<div class='chart-wrap'>
+  <div class='title'>YoY Comparison</div>
+  <div class='kpi-row'><div class='kpi-card'><div class='kpi-head'>2025</div><div class='kpi-value'>80.68%</div><div class='kpi-note'>Conversion</div></div><div class='kpi-card'><div class='kpi-head'>2026</div><div class='kpi-value'><span class='kpi-value-inline'><span class='kpi-value-num'>85.16%</span><sup class='kpi-diff kpi-diff-pos'>+4.48 pp</sup></span></div><div class='kpi-note'>Conversion</div></div></div>
+  <div class='panel'>
+    <svg width='100%' viewBox='0 0 400 200' preserveAspectRatio='xMinYMin meet' role='img' aria-label='YoY comparison chart'>
+      <line x1='32' y1='158.00' x2='380' y2='158.00' class='tick-line' /><line x1='32' y1='129.60' x2='380' y2='129.60' class='tick-line' /><line x1='32' y1='101.20' x2='380' y2='101.20' class='tick-line' /><line x1='32' y1='72.80' x2='380' y2='72.80' class='tick-line' /><line x1='32' y1='44.40' x2='380' y2='44.40' class='tick-line' /><line x1='32' y1='16.00' x2='380' y2='16.00' class='tick-line' />
+      <rect x='112.00' y='23.47' width='90' height='134.53' rx='6' ry='6' fill='#1B8398' /><text x='157.00' y='17.47' text-anchor='middle' class='val-label'>80.68%</text><text x='157.00' y='174.00' text-anchor='middle' class='year-label'>2025</text><rect x='210.00' y='16.00' width='90' height='142.00' rx='6' ry='6' fill='#31CAE8' /><text x='255.00' y='10.00' text-anchor='middle' class='val-label'>85.16%</text><text x='255.00' y='174.00' text-anchor='middle' class='year-label'>2026</text>
+    </svg>
+  </div>
+</div>
+</div>
+  <div class='yoy-save-bottom'><button id='yoy-save-svg' class='yoy-save-btn'>Save as SVG</button><span id='yoy-save-status' class='yoy-save-status'></span></div>
+</div>
+<script>
+// Save full widget as SVG (visual 1:1 using raster snapshot embedded in SVG) — same pattern as Payment Flow
+const yoySaveBtn = document.getElementById('yoy-save-svg');
+const yoySaveStatus = document.getElementById('yoy-save-status');
+if (yoySaveBtn) {
+  yoySaveBtn.addEventListener('click', async () => {
+    try {
+      const root = document.querySelector('.yoy-pfw');
+      if (!root) throw new Error('Widget root not found');
+      if (typeof html2canvas === 'undefined') throw new Error('html2canvas is not loaded');
+
+      const saveBlock = root.querySelector('.yoy-save-bottom');
+      const prevDisplay = saveBlock ? saveBlock.style.display : '';
+      if (saveBlock) saveBlock.style.display = 'none';
+      const canvas = await html2canvas(root, {
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        scale: 2,
+      });
+      if (saveBlock) saveBlock.style.display = prevDisplay;
+
+      const pngDataUrl = canvas.toDataURL('image/png');
+      const width = canvas.width;
+      const height = canvas.height;
+      const svgString = `<?xml version="1.0" encoding="UTF-8"?>`
+        + `\n<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">`
+        + `<rect x="0" y="0" width="${width}" height="${height}" fill="white"/>`
+        + `<image href="${pngDataUrl}" x="0" y="0" width="${width}" height="${height}"/>`
+        + `</svg>`;
+
+      const resp = await fetch('/__save_svg', {
+        method: 'POST',
+        headers: {'Content-Type': 'image/svg+xml; charset=utf-8'},
+        body: svgString,
+      });
+      if (!resp.ok) throw new Error('Save failed');
+      const msg = await resp.text();
+      yoySaveStatus.textContent = msg || 'Saved';
+      yoySaveStatus.style.color = '#2E7D32';
+    } catch (e) {
+      yoySaveStatus.textContent = 'Save failed';
+      yoySaveStatus.style.color = '#C62828';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

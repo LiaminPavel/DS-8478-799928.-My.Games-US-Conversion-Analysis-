@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+  body { background:#FFFFFF; margin:0; padding:18px; font-family:'Roboto', sans-serif; color:#011627; }
+  .wrap { background:#FFFFFF; border:2px solid #D0D7DA; border-radius:14px; padding:12px; max-width: 760px; }
+  .title { font-family:'Open Sans', sans-serif; font-size:34px; font-weight:700; line-height:1.1; margin:0 0 2px; }
+  .subtitle { font-size:13px; color:#595959; margin:0 0 10px; }
+  .kpi-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+  .kpi { border:1px solid #D3D3D3; border-radius:14px; overflow:hidden; background:#FFFFFF; }
+  .kpi-h { background:#B2F2FF; text-align:center; font-size:13px; font-weight:700; padding:6px 8px; }
+  .kpi-v { text-align:center; color:#31CAE8; font-size:42px; font-weight:700; line-height:1.0; padding:8px 8px 4px; }
+  .kpi-n { text-align:center; font-size:13px; color:#595959; padding:0 8px 10px; }
+  .panel { background:#FFFFFF; border:1px solid #D0D7DA; border-radius:12px; padding:14px; }
+  .content { display:grid; grid-template-columns:320px 1fr; gap:16px; align-items:center; }
+  .donut-wrap { display:flex; align-items:center; justify-content:center; }
+  .center-text { font-family:'Open Sans', sans-serif; font-size:44px; font-weight:700; fill:#31CAE8; text-anchor:middle; }
+  .center-sub { font-size:16px; fill:#595959; text-anchor:middle; }
+  .legend-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #EEF2F4; }
+  .legend-row:last-child { border-bottom:none; }
+  .legend-left { display:flex; align-items:center; gap:10px; }
+  .dot { width:14px; height:14px; border-radius:4px; display:inline-block; }
+  .locale { font-size:22px; font-weight:700; color:#011627; line-height:1; }
+  .legend-right { display:flex; align-items:baseline; gap:12px; }
+  .count { font-size:24px; font-weight:700; color:#31CAE8; }
+  .share { font-size:20px; color:#595959; }
+  .locale-pfw { max-width: 760px; margin: 0 auto; }
+  .locale-save-bottom { display:flex; align-items:center; justify-content:flex-end; gap:10px; margin-top:12px; }
+  .locale-save-btn { background:#31CAE8; color:#fff; border:none; border-radius:8px; padding:7px 12px; font-size:12px; font-weight:600; cursor:pointer; }
+  .locale-save-status { font-size:11px; color:#595959; }
+</style>
+</head>
+<body>
+  <div class='locale-pfw'>
+  <div class='wrap'>
+    <div class='title'>The language of the Pay Station opening</div>
+    <div class='subtitle'></div>
+
+    <div class='kpi-row'>
+      <div class='kpi'>
+        <div class='kpi-h'>Total tokens</div>
+        <div class='kpi-v'>494,378</div>
+        <div class='kpi-n'>Unique user access tokens</div>
+      </div>
+      <div class='kpi'>
+        <div class='kpi-h'>Top language</div>
+        <div class='kpi-v'>en - 95.14%</div>
+        <div class='kpi-n'>Most common opening language</div>
+      </div>
+    </div>
+
+    <div class='panel'>
+      <div class='content'>
+        <div class='donut-wrap'>
+          <svg width='360' height='360' viewBox='0 0 400 400' role='img' aria-label='Top language share donut'>
+            <path d='M 200.000 60.000 A 145.000 145.000 0 1 1 156.372 66.719 L 171.115 113.449 A 96.000 96.000 0 1 0 200.000 109.000 Z' fill='#1B8398'></path><path d='M 156.372 66.719 A 145.000 145.000 0 0 1 187.325 60.555 L 191.608 109.368 A 96.000 96.000 0 0 0 171.115 113.449 Z' fill='#22A8C3'></path><path d='M 187.325 60.555 A 145.000 145.000 0 0 1 195.471 60.071 L 197.002 109.047 A 96.000 96.000 0 0 0 191.608 109.368 Z' fill='#31CAE8'></path><path d='M 195.471 60.071 A 145.000 145.000 0 0 1 196.648 60.039 L 197.781 109.026 A 96.000 96.000 0 0 0 197.002 109.047 Z' fill='#55DCF6'></path><path d='M 196.648 60.039 A 145.000 145.000 0 0 1 197.153 60.028 L 198.115 109.019 A 96.000 96.000 0 0 0 197.781 109.026 Z' fill='#80EAFF'></path><path d='M 197.153 60.028 A 145.000 145.000 0 0 1 197.649 60.019 L 198.443 109.013 A 96.000 96.000 0 0 0 198.115 109.019 Z' fill='#B2F2FF'></path>
+            <text x='200' y='205' class='center-text'>95.14%</text>
+            <text x='200' y='244' class='center-sub'>Top language share</text>
+          </svg>
+        </div>
+        <div>
+          <div class='legend-row'><div class='legend-left'><span class='dot' style='background:#1B8398'></span><span class='locale'>en</span></div><div class='legend-right'><span class='count'>470,331</span><span class='share'>95.14% share</span></div></div><div class='legend-row'><div class='legend-left'><span class='dot' style='background:#22A8C3'></span><span class='locale'>es</span></div><div class='legend-right'><span class='count'>17,160</span><span class='share'>3.47% share</span></div></div><div class='legend-row'><div class='legend-left'><span class='dot' style='background:#31CAE8'></span><span class='locale'>ru</span></div><div class='legend-right'><span class='count'>4,429</span><span class='share'>0.90% share</span></div></div><div class='legend-row'><div class='legend-left'><span class='dot' style='background:#55DCF6'></span><span class='locale'>vi</span></div><div class='legend-right'><span class='count'>639</span><span class='share'>0.13% share</span></div></div><div class='legend-row'><div class='legend-left'><span class='dot' style='background:#80EAFF'></span><span class='locale'>de</span></div><div class='legend-right'><span class='count'>274</span><span class='share'>0.06% share</span></div></div><div class='legend-row'><div class='legend-left'><span class='dot' style='background:#B2F2FF'></span><span class='locale'>pt</span></div><div class='legend-right'><span class='count'>269</span><span class='share'>0.05% share</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='locale-save-bottom'><button id='locale-save-svg' class='locale-save-btn'>Save as SVG</button><span id='locale-save-status' class='locale-save-status'></span></div>
+</div>
+<script>
+const localeSaveBtn = document.getElementById('locale-save-svg');
+const localeSaveStatus = document.getElementById('locale-save-status');
+if (localeSaveBtn) {
+  localeSaveBtn.addEventListener('click', async () => {
+    try {
+      const root = document.querySelector('.locale-pfw');
+      if (!root) throw new Error('Widget root not found');
+      if (typeof html2canvas === 'undefined') throw new Error('html2canvas is not loaded');
+
+      const saveBlock = root.querySelector('.locale-save-bottom');
+      const prevDisplay = saveBlock ? saveBlock.style.display : '';
+      if (saveBlock) saveBlock.style.display = 'none';
+      const canvas = await html2canvas(root, {
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        scale: 2,
+      });
+      if (saveBlock) saveBlock.style.display = prevDisplay;
+
+      const pngDataUrl = canvas.toDataURL('image/png');
+      const width = canvas.width;
+      const height = canvas.height;
+      const svgString = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>`
+        + `\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"${width}\" height=\"${height}\" viewBox=\"0 0 ${width} ${height}\">`
+        + `<rect x=\"0\" y=\"0\" width=\"${width}\" height=\"${height}\" fill=\"white\"/>`
+        + `<image href=\"${pngDataUrl}\" x=\"0\" y=\"0\" width=\"${width}\" height=\"${height}\"/>`
+        + `</svg>`;
+
+      const resp = await fetch('/__save_svg', {
+        method: 'POST',
+        headers: {'Content-Type': 'image/svg+xml; charset=utf-8'},
+        body: svgString,
+      });
+      if (!resp.ok) throw new Error('Save failed');
+      const msg = await resp.text();
+      localeSaveStatus.textContent = msg || 'Saved';
+      localeSaveStatus.style.color = '#2E7D32';
+    } catch (e) {
+      localeSaveStatus.textContent = 'Save failed';
+      localeSaveStatus.style.color = '#C62828';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+  body { background:#FFFFFF; margin:0; padding:16px; font-family:'Roboto', sans-serif; color:#011627; }
+  .main-title { font-family:'Open Sans', sans-serif; font-size:32px; font-weight:700; line-height:1.1; margin:0 0 12px; }
+  .grid-4 { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px; align-items:start; }
+  .method-card { background:#FFFFFF; border:2px solid #D0D7DA; border-radius:14px; padding:10px; }
+  .method-title { font-family:'Open Sans', sans-serif; font-size:22px; font-weight:700; line-height:1.15; margin:0 0 8px; }
+  .method-kpi-row { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px; margin-bottom:10px; }
+  .kpi-chip { border:1px solid #D3D3D3; border-radius:10px; overflow:hidden; background:#FFFFFF; }
+  .kpi-chip-year { background:#B2F2FF; text-align:center; font-size:12px; font-weight:700; padding:4px 6px; }
+  .kpi-chip-val { text-align:center; color:#31CAE8; font-size:26px; font-weight:700; line-height:1.1; padding:6px 4px 8px; display:flex; justify-content:center; align-items:flex-start; font-family:'Roboto', sans-serif; }
+  .kpi-chip-val-inline { display:inline-flex; align-items:flex-start; gap:4px; }
+  .kpi-chip-val-num { font-size:inherit; font-weight:inherit; color:inherit; }
+  .kpi-chip-val .kpi-diff { font-size:13px; line-height:1; vertical-align:super; position:relative; top:-0.2em; font-weight:400; margin-left:2px; font-family:'Roboto', sans-serif; }
+  .kpi-diff-pos { color:#2E7D32; }
+  .kpi-diff-neg { color:#C62828; }
+  .kpi-diff-neu { color:#757575; }
+  .method-panel { background:#FFFFFF; border:1px solid #D0D7DA; border-radius:12px; padding:8px; overflow:hidden; }
+  .legend { display:flex; gap:14px; margin:0 0 8px; flex-wrap:wrap; }
+  .legend-item { font-size:11px; color:#595959; display:flex; align-items:center; gap:6px; }
+  .sw { width:14px; height:8px; border-radius:4px; display:inline-block; }
+  .metric-label { font-size:11px; fill:#011627; font-weight:700; font-family:'Roboto', sans-serif; }
+  .year-label { font-size:10px; fill:#595959; font-weight:700; font-family:'Roboto', sans-serif; }
+  .val-label { font-size:10px; fill:#011627; font-weight:700; font-family:'Roboto', sans-serif; }
+  .grid-line { stroke:#C0C0C0; stroke-width:1; }
+  .tick-line { stroke:#E6E6E6; stroke-width:1; }
+  .tick-label { font-size:10px; fill:#595959; font-family:'Roboto', sans-serif; }
+</style>
+  .yoypm-pfw { max-width: 1200px; margin: 0 auto; }
+  .yoypm-save-bottom { display:flex; align-items:center; justify-content:flex-end; gap:10px; margin-top:12px; }
+  .yoypm-save-btn { background:#31CAE8; color:#fff; border:none; border-radius:8px; padding:7px 12px; font-size:12px; font-weight:600; cursor:pointer; }
+  .yoypm-save-status { font-size:11px; color:#595959; }
+</head>
+<body>
+  <div class='yoypm-pfw'>
+  <div class='main-title'>YoY Comparison by Payment Method</div>
+  <div class='grid-4'>
+    
+    <div class='method-card'>
+      <div class='method-title'>Bank card</div>
+      <div class='method-kpi-row'><div class='kpi-chip'><div class='kpi-chip-year'>2025</div><div class='kpi-chip-val'>75.65%</div></div><div class='kpi-chip'><div class='kpi-chip-year'>2026</div><div class='kpi-chip-val'><span class='kpi-chip-val-inline'><span class='kpi-chip-val-num'>83.06%</span><sup class='kpi-diff kpi-diff-pos'>+7.41 pp</sup></span></div></div></div>
+      <div class='method-panel'>
+        <svg width='100%' viewBox='0 0 400 200' preserveAspectRatio='xMinYMin meet' role='img' aria-label='YoY chart for Bank card'>
+          <line x1='32' y1='158.00' x2='380' y2='158.00' class='tick-line' /><line x1='32' y1='129.60' x2='380' y2='129.60' class='tick-line' /><line x1='32' y1='101.20' x2='380' y2='101.20' class='tick-line' /><line x1='32' y1='72.80' x2='380' y2='72.80' class='tick-line' /><line x1='32' y1='44.40' x2='380' y2='44.40' class='tick-line' /><line x1='32' y1='16.00' x2='380' y2='16.00' class='tick-line' />
+          <text x='206.00' y='192' text-anchor='middle' class='metric-label'>Conversion</text><rect x='112.00' y='28.67' width='90' height='129.33' rx='6' ry='6' fill='#1B8398' /><text x='157.00' y='22.67' text-anchor='middle' class='val-label'>75.65%</text><text x='157.00' y='174.00' text-anchor='middle' class='year-label'>2025</text><rect x='210.00' y='16.00' width='90' height='142.00' rx='6' ry='6' fill='#31CAE8' /><text x='255.00' y='10.00' text-anchor='middle' class='val-label'>83.06%</text><text x='255.00' y='174.00' text-anchor='middle' class='year-label'>2026</text>
+        </svg>
+      </div>
+    </div>
+    
+    <div class='method-card'>
+      <div class='method-title'>Apple Pay</div>
+      <div class='method-kpi-row'><div class='kpi-chip'><div class='kpi-chip-year'>2025</div><div class='kpi-chip-val'>88.94%</div></div><div class='kpi-chip'><div class='kpi-chip-year'>2026</div><div class='kpi-chip-val'><span class='kpi-chip-val-inline'><span class='kpi-chip-val-num'>88.39%</span><sup class='kpi-diff kpi-diff-neg'>-0.55 pp</sup></span></div></div></div>
+      <div class='method-panel'>
+        <svg width='100%' viewBox='0 0 400 200' preserveAspectRatio='xMinYMin meet' role='img' aria-label='YoY chart for Apple Pay'>
+          <line x1='32' y1='158.00' x2='380' y2='158.00' class='tick-line' /><line x1='32' y1='129.60' x2='380' y2='129.60' class='tick-line' /><line x1='32' y1='101.20' x2='380' y2='101.20' class='tick-line' /><line x1='32' y1='72.80' x2='380' y2='72.80' class='tick-line' /><line x1='32' y1='44.40' x2='380' y2='44.40' class='tick-line' /><line x1='32' y1='16.00' x2='380' y2='16.00' class='tick-line' />
+          <text x='206.00' y='192' text-anchor='middle' class='metric-label'>Conversion</text><rect x='112.00' y='16.00' width='90' height='142.00' rx='6' ry='6' fill='#1B8398' /><text x='157.00' y='10.00' text-anchor='middle' class='val-label'>88.94%</text><text x='157.00' y='174.00' text-anchor='middle' class='year-label'>2025</text><rect x='210.00' y='16.88' width='90' height='141.12' rx='6' ry='6' fill='#31CAE8' /><text x='255.00' y='10.88' text-anchor='middle' class='val-label'>88.39%</text><text x='255.00' y='174.00' text-anchor='middle' class='year-label'>2026</text>
+        </svg>
+      </div>
+    </div>
+    
+    <div class='method-card'>
+      <div class='method-title'>PayPal</div>
+      <div class='method-kpi-row'><div class='kpi-chip'><div class='kpi-chip-year'>2025</div><div class='kpi-chip-val'>81.33%</div></div><div class='kpi-chip'><div class='kpi-chip-year'>2026</div><div class='kpi-chip-val'><span class='kpi-chip-val-inline'><span class='kpi-chip-val-num'>87.28%</span><sup class='kpi-diff kpi-diff-pos'>+5.96 pp</sup></span></div></div></div>
+      <div class='method-panel'>
+        <svg width='100%' viewBox='0 0 400 200' preserveAspectRatio='xMinYMin meet' role='img' aria-label='YoY chart for PayPal'>
+          <line x1='32' y1='158.00' x2='380' y2='158.00' class='tick-line' /><line x1='32' y1='129.60' x2='380' y2='129.60' class='tick-line' /><line x1='32' y1='101.20' x2='380' y2='101.20' class='tick-line' /><line x1='32' y1='72.80' x2='380' y2='72.80' class='tick-line' /><line x1='32' y1='44.40' x2='380' y2='44.40' class='tick-line' /><line x1='32' y1='16.00' x2='380' y2='16.00' class='tick-line' />
+          <text x='206.00' y='192' text-anchor='middle' class='metric-label'>Conversion</text><rect x='112.00' y='25.69' width='90' height='132.31' rx='6' ry='6' fill='#1B8398' /><text x='157.00' y='19.69' text-anchor='middle' class='val-label'>81.33%</text><text x='157.00' y='174.00' text-anchor='middle' class='year-label'>2025</text><rect x='210.00' y='16.00' width='90' height='142.00' rx='6' ry='6' fill='#31CAE8' /><text x='255.00' y='10.00' text-anchor='middle' class='val-label'>87.28%</text><text x='255.00' y='174.00' text-anchor='middle' class='year-label'>2026</text>
+        </svg>
+      </div>
+    </div>
+    
+    <div class='method-card'>
+      <div class='method-title'>Google Pay</div>
+      <div class='method-kpi-row'><div class='kpi-chip'><div class='kpi-chip-year'>2025</div><div class='kpi-chip-val'>80.60%</div></div><div class='kpi-chip'><div class='kpi-chip-year'>2026</div><div class='kpi-chip-val'><span class='kpi-chip-val-inline'><span class='kpi-chip-val-num'>86.24%</span><sup class='kpi-diff kpi-diff-pos'>+5.65 pp</sup></span></div></div></div>
+      <div class='method-panel'>
+        <svg width='100%' viewBox='0 0 400 200' preserveAspectRatio='xMinYMin meet' role='img' aria-label='YoY chart for Google Pay'>
+          <line x1='32' y1='158.00' x2='380' y2='158.00' class='tick-line' /><line x1='32' y1='129.60' x2='380' y2='129.60' class='tick-line' /><line x1='32' y1='101.20' x2='380' y2='101.20' class='tick-line' /><line x1='32' y1='72.80' x2='380' y2='72.80' class='tick-line' /><line x1='32' y1='44.40' x2='380' y2='44.40' class='tick-line' /><line x1='32' y1='16.00' x2='380' y2='16.00' class='tick-line' />
+          <text x='206.00' y='192' text-anchor='middle' class='metric-label'>Conversion</text><rect x='112.00' y='25.30' width='90' height='132.70' rx='6' ry='6' fill='#1B8398' /><text x='157.00' y='19.30' text-anchor='middle' class='val-label'>80.60%</text><text x='157.00' y='174.00' text-anchor='middle' class='year-label'>2025</text><rect x='210.00' y='16.00' width='90' height='142.00' rx='6' ry='6' fill='#31CAE8' /><text x='255.00' y='10.00' text-anchor='middle' class='val-label'>86.24%</text><text x='255.00' y='174.00' text-anchor='middle' class='year-label'>2026</text>
+        </svg>
+      </div>
+    </div>
+    
+  </div>
+  <div class='yoypm-save-bottom'><button id='yoypm-save-svg' class='yoypm-save-btn'>Save as SVG</button><span id='yoypm-save-status' class='yoypm-save-status'></span></div>
+</div>
+<script>
+const yoypmSaveBtn = document.getElementById('yoypm-save-svg');
+const yoypmSaveStatus = document.getElementById('yoypm-save-status');
+if (yoypmSaveBtn) {
+  yoypmSaveBtn.addEventListener('click', async () => {
+    try {
+      const root = document.querySelector('.yoypm-pfw');
+      if (!root) throw new Error('Widget root not found');
+      if (typeof html2canvas === 'undefined') throw new Error('html2canvas is not loaded');
+
+      const saveBlock = root.querySelector('.yoypm-save-bottom');
+      const prevDisplay = saveBlock ? saveBlock.style.display : '';
+      if (saveBlock) saveBlock.style.display = 'none';
+      const canvas = await html2canvas(root, {
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        scale: 2,
+      });
+      if (saveBlock) saveBlock.style.display = prevDisplay;
+
+      const pngDataUrl = canvas.toDataURL('image/png');
+      const width = canvas.width;
+      const height = canvas.height;
+      const svgString = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>`
+        + `\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"${width}\" height=\"${height}\" viewBox=\"0 0 ${width} ${height}\">`
+        + `<rect x=\"0\" y=\"0\" width=\"${width}\" height=\"${height}\" fill=\"white\"/>`
+        + `<image href=\"${pngDataUrl}\" x=\"0\" y=\"0\" width=\"${width}\" height=\"${height}\"/>`
+        + `</svg>`;
+
+      const resp = await fetch('/__save_svg', {
+        method: 'POST',
+        headers: {'Content-Type': 'image/svg+xml; charset=utf-8'},
+        body: svgString,
+      });
+      if (!resp.ok) throw new Error('Save failed');
+      const msg = await resp.text();
+      yoypmSaveStatus.textContent = msg || 'Saved';
+      yoypmSaveStatus.style.color = '#2E7D32';
+    } catch (e) {
+      yoypmSaveStatus.textContent = 'Save failed';
+      yoypmSaveStatus.style.color = '#C62828';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
